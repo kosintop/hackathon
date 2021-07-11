@@ -1,26 +1,38 @@
 <template>
   <v-container>
-
-    <v-row class="">
-        <v-col cols="12">
-            <router-link :to="{name:'corporateTestCreate'}">
-              <v-btn>New Test</v-btn>
-            </router-link>
-        </v-col>
+    <v-app-bar class="mb-4" color="primary">
+          <router-link :to="{name:'corporateProjectList'}">
+            <div class="d-flex">
+              <v-icon color='white'>fas fa-chevron-left</v-icon>
+              <div class="ml-4" style="color:white">ย้อนกลับ</div>
+            </div>
+          </router-link>
+    </v-app-bar>
+    <v-row>
+      <v-col>
+        <v-card color='primary' class="pa-4" style="color:white">
+          <div>Total Variants</div>
+          <div class="font-weight-bold text-h4">3</div>
+        </v-card>
+      </v-col>
+      <v-col>
+        <v-card color='primary' class="pa-4" style="color:white">
+          <div>Sales</div>
+          <div class="font-weight-bold text-h4">4,321 units</div>
+        </v-card>
+      </v-col>
+      <v-col>
+        <v-card color='primary' class="pa-4" style="color:white">
+          <div>RISE Score</div>
+          <div class="font-weight-bold text-h4">4.2</div>
+        </v-card>
+      </v-col>
     </v-row>
-    <v-row class="">
-      <v-col cols="12">
-        <v-data-table
-        :headers="headers"
-        :items="items"
-        >
-				<template v-slot:item.action="{ item }">
-					<v-btn :to="{name:'corporateTestList'}">{{item.name}}</v-btn>
-				</template>
-
-			</v-data-table>
-    </v-col>
-	</v-row>
+    <v-row>
+      <v-col>
+        <apexchart height="400" type="line" :options="options" :series="series"></apexchart>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -28,29 +40,24 @@
   export default {
     name: 'ProjectList',
     data: () => ({
-      headers:[
-          {
-            text: 'Test Name',
-            align: 'start',
-            sortable: false,
-            value: 'name',
-          },
-          { text: 'Attribute Name', value: 'attribute' },
-          { text: 'Attribute Value', value: 'value' },
-          { text: 'action', value: 'action' },
-        ],
-        items: [
-          {
-            name: 'Test 2',
-            attribute: 'ชื่อ',
-            value: 'รองเท้ายางยืด',
-          },
-          {
-            name: 'Test 2',
-            attribute: 'ราคา',
-            value: '70 (+20)',
-          },
-		]
+     options: {
+        chart: {
+          id: 'vuechart-example'
+        },
+        xaxis: {
+          categories: [2020, 2021, 2022, 2023, 2024]
+        }
+      },
+      series: [{
+        name: 'Variant-A',
+        data: [30, 40, 45, 50, 49]
+      },{
+        name: 'Variant-B',
+        data: [35, 42, 37, 67, 80]
+      },{
+        name: 'Variant-C',
+        data: [10, 25, 7, 55, 32]
+      }]
     }),
   }
 </script>

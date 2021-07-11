@@ -44,7 +44,7 @@
         </template>
         <template v-else-if="productName=='drone'">
         <v-col cols="12">
-          <div class="text-h4">Drone Service</div>
+          <div class="text-h4">Robot Service</div>
             <v-img
             :src="require('../assets/robot.png')"
             class="my-3"

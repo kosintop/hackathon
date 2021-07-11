@@ -7,7 +7,9 @@ import Vuetify, {
     VTextField,
     VSelect,
     VAppBar,
-    VDivider
+    VDivider,
+    VFileInput,
+    VCard
   } from 'vuetify/lib'
 import '@fortawesome/fontawesome-free/css/all.css' 
 
@@ -20,7 +22,9 @@ Vue.use(Vuetify,{
         VTextField,
         VSelect,
         VAppBar,
-        VDivider
+        VDivider,
+        VFileInput,
+        VCard
     },
 });
 

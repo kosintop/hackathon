@@ -1,15 +1,13 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col></v-col>
-      <v-col></v-col>
-      <v-col></v-col>
-    </v-row>
+    <v-app-bar class="mb-4" color="primary">
+
+    </v-app-bar>
     <v-row class="">
-        <v-col cols="12">
-			<router-link :to="{name:'corporateProjectCreate'}">
-				<v-btn>New Project</v-btn>
-			</router-link>
+        <v-col cols="12" class="text-left">
+          <router-link :to="{name:'corporateProjectCreate'}">
+            <v-btn color='primary'>New Item</v-btn>
+          </router-link>
         </v-col>
     </v-row>
     <v-row class="">
@@ -19,11 +17,13 @@
 				:items="items"
 				>
 				<template v-slot:item.action="{ item }">
-					<router-link :to="{name:'corporateTestList', query:{name:item.name}}">
-						<v-btn color='blue'>
-							<v-icon color="white">fas fa-info</v-icon>
-						</v-btn>
-					</router-link>
+          <div class="d-flex  justify-end" style="width:100%">
+            <router-link :to="{name:'corporateTestList', query:{name:item.name}}">
+              <v-btn color='blue' max-width="40" min-width="40">
+                <v-icon color="white">fas fa-info</v-icon>
+              </v-btn>
+            </router-link>
+          </div>
 				</template>
 			</v-data-table>
         </v-col>
@@ -38,25 +38,30 @@
     data: () => ({
 		headers: [
           {
-            text: 'Project Name',
+            text: 'Name',
 			align: 'start',
 			sortable: false,
             value: 'name',
           },
 			{ text: 'Sales', value: 'sales' },
-			{ text: 'Rating', value: 'rating' },
-			{ text: 'action', value: 'action' },
+			{ text: 'RISE Score', value: 'rating' },
+			{ text: '', value: 'action' },
         ],
         items: [
           {
-            name: 'รองเท้า',
-			sales: '100',
+            name: 'รองเท้านันยาง',
+            sales: '4,217',
             rating: '4.2',
           },
-                   {
-            name: 'รองเท้า 2',
-			sales: '100',
-            rating: '5.4',
+          {
+            name: 'Home Sharing',
+            sales: '3,120',
+            rating: '3.5',
+          },
+          {
+            name: 'Drone Service',
+            sales: '2,588',
+            rating: '4.7',
           },
 		]
     }),

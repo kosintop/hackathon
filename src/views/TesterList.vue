@@ -19,7 +19,7 @@
     </v-row>
     <v-row>
       <v-col class="text-center">
-        <div style="background-color:yellow;border:1px solid black">Special Offer for You</div>
+        <div class="font-weight-bold text-h6" style="background-color:lightblue;border:1px solid black">Special Offer for You</div>
       </v-col>
     </v-row>
     <v-row class="mt-4">
@@ -82,7 +82,7 @@
         </v-col>
         <v-col cols="6">
             <div class="text-h6 text-left font-weight-bold">
-              Drone Service
+              Robot Service
             </div>
             <div class="text-left">ฟรี! บริการตรวจสภาพฟาร์มข้าวของคุณแบบอัตโนมัติ ด้วยหุ่นยนต์</div>
             <router-link :to="{name:'testerBuy',query:{name:'drone'}}">
