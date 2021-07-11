@@ -59,7 +59,7 @@
             rating: '3.5',
           },
           {
-            name: 'Drone Service',
+            name: 'Robot Service',
             sales: '2,588',
             rating: '4.7',
           },
