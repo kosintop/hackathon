@@ -1,12 +1,11 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <div id="nav">
       <router-link :to="{name:'testerList'}">Tester</router-link> |
-      <router-link to="corporate">Corporate</router-link>
+      <router-link :to="{name:'corporateProjectList'}">Corporate</router-link>
     </div>
     <router-view/>
-	<component :is="'script'" src="https://static.landbot.io/landbot-3/landbot-3.0.0.js" async></component>
-  </div>
+  </v-app>
 </template>
 
 

@@ -1,14 +1,31 @@
 import Vue from 'vue';
 import Vuetify, {
     VBtn,
-    VAvatar
+    VIcon,
+    VAvatar,
+    VInput,
+    VTextField,
+    VSelect,
+    VAppBar,
+    VDivider
   } from 'vuetify/lib'
+import '@fortawesome/fontawesome-free/css/all.css' 
+
 Vue.use(Vuetify,{
     components: {
         VBtn,
-        VAvatar
+        VAvatar,
+        VIcon,
+        VInput,
+        VTextField,
+        VSelect,
+        VAppBar,
+        VDivider
     },
 });
 
 export default new Vuetify({
+    icons: {
+        iconfont: 'fa'
+      },
 });
